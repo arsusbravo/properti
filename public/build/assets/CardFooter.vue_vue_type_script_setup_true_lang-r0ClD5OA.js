@@ -1,1 +1,0 @@
-import{c as r}from"./index-C5BVLxzA.js";import{d as a,c as t,n,u as c,z as l,o as p}from"./app-DPgdRUPo.js";const i=a({__name:"CardFooter",props:{class:{}},setup(e){const s=e;return(o,m)=>(p(),t("div",{"data-slot":"card-footer",class:n(c(r)("flex items-center px-6 [.border-t]:pt-6",s.class))},[l(o.$slots,"default")],2))}});export{i as _};

@@ -8,7 +8,8 @@ import { Label } from '@/components/ui/label';
 import { Spinner } from '@/components/ui/spinner';
 import AuthBase from '@/layouts/AuthLayout.vue';
 import { login } from '@/routes';
-import { store } from '@/routes/register';
+// Registration is currently disabled — route import removed
+const store = { form: () => ({ method: 'post' as const, action: '/register' }) };
 import { Building2, ShoppingBag } from 'lucide-vue-next';
 import { ref } from 'vue';
 

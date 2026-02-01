@@ -30,19 +30,19 @@
             <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="max-w-3xl">
                     <div class="mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 backdrop-blur-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-400"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.77 4 4 0 0 1 0 6.76 4 4 0 0 1-4.78 4.77 4 4 0 0 1-6.74 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#c39b5d]"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.77 4 4 0 0 1 0 6.76 4 4 0 0 1-4.78 4.77 4 4 0 0 1-6.74 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>
                         <span class="text-sm font-medium text-white">Fasilitator Properti Terpercaya</span>
                     </div>
                     <h1 class="text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
                         Temukan Properti
-                        <span class="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">Impian Anda</span>
+                        <span class="bg-gradient-to-r from-[#c39b5d] to-[#d4b78a] bg-clip-text text-transparent">Impian Anda</span>
                         di Jakarta
                     </h1>
                     <p class="mt-4 max-w-xl text-lg leading-relaxed text-white/80 sm:text-xl">
                         Kami membantu Anda dari pencarian properti hingga serah terima sertifikat, dengan transparansi penuh dan keamanan hukum.
                     </p>
                     <div class="mt-8 flex flex-wrap gap-3">
-                        <a href="#search" id="scroll-to-search" class="inline-flex items-center rounded-md bg-emerald-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-emerald-700">
+                        <a href="#search" id="scroll-to-search" class="inline-flex items-center rounded-md bg-[#c39b5d] px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#b08a4e]">
                             Mulai Cari Properti
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                         </a>
@@ -65,8 +65,8 @@
     {{-- Property Preference Form Section --}}
     <section class="relative bg-white py-16 sm:py-24" id="search">
         <div class="absolute inset-0 overflow-hidden">
-            <div class="absolute -top-40 right-0 h-80 w-80 rounded-full bg-emerald-50 opacity-50 blur-3xl"></div>
-            <div class="absolute -bottom-40 left-0 h-80 w-80 rounded-full bg-cyan-50 opacity-50 blur-3xl"></div>
+            <div class="absolute -top-40 right-0 h-80 w-80 rounded-full bg-[#f5f0e8] opacity-50 blur-3xl"></div>
+            <div class="absolute -bottom-40 left-0 h-80 w-80 rounded-full bg-[#eee8da] opacity-50 blur-3xl"></div>
         </div>
 
         <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -108,7 +108,7 @@
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">{!! $type['icon'] !!}</svg>
                                 </div>
                                 <span class="type-label text-sm font-medium text-neutral-700">{{ $type['label'] }}</span>
-                                <div class="check-mark absolute -right-1 -top-1 hidden h-5 w-5 items-center justify-center rounded-full bg-emerald-500 text-white">
+                                <div class="check-mark absolute -right-1 -top-1 hidden h-5 w-5 items-center justify-center rounded-full bg-[#c39b5d] text-white">
                                     <svg class="h-3 w-3" viewBox="0 0 12 12" fill="none"><path d="M10 3L4.5 8.5L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                                 </div>
                             </button>
@@ -122,28 +122,28 @@
                         <label class="mb-1.5 block text-sm font-medium text-neutral-700">Budget Minimum</label>
                         <div class="relative">
                             <span class="absolute left-3 top-1/2 -translate-y-1/2 text-sm text-neutral-400">Rp</span>
-                            <input id="budget-min" type="text" placeholder="500.000.000" class="w-full rounded-md border border-neutral-300 bg-white py-2 pl-9 pr-3 text-sm shadow-sm placeholder:text-neutral-400 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500" />
+                            <input id="budget-min" type="text" placeholder="500.000.000" class="w-full rounded-md border border-neutral-300 bg-white py-2 pl-9 pr-3 text-sm shadow-sm placeholder:text-neutral-400 focus:border-[#c39b5d] focus:outline-none focus:ring-1 focus:ring-[#c39b5d]" />
                         </div>
                     </div>
                     <div>
                         <label class="mb-1.5 block text-sm font-medium text-neutral-700">Budget Maksimum</label>
                         <div class="relative">
                             <span class="absolute left-3 top-1/2 -translate-y-1/2 text-sm text-neutral-400">Rp</span>
-                            <input id="budget-max" type="text" placeholder="2.000.000.000" class="w-full rounded-md border border-neutral-300 bg-white py-2 pl-9 pr-3 text-sm shadow-sm placeholder:text-neutral-400 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500" />
+                            <input id="budget-max" type="text" placeholder="2.000.000.000" class="w-full rounded-md border border-neutral-300 bg-white py-2 pl-9 pr-3 text-sm shadow-sm placeholder:text-neutral-400 focus:border-[#c39b5d] focus:outline-none focus:ring-1 focus:ring-[#c39b5d]" />
                         </div>
                     </div>
                     <div>
                         <label class="mb-1.5 block text-sm font-medium text-neutral-700">Lokasi Preferensi</label>
                         <div class="relative">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
-                            <input id="location" type="text" placeholder="Jakarta Selatan" class="w-full rounded-md border border-neutral-300 bg-white py-2 pl-9 pr-3 text-sm shadow-sm placeholder:text-neutral-400 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500" />
+                            <input id="location" type="text" placeholder="Jakarta Selatan" class="w-full rounded-md border border-neutral-300 bg-white py-2 pl-9 pr-3 text-sm shadow-sm placeholder:text-neutral-400 focus:border-[#c39b5d] focus:outline-none focus:ring-1 focus:ring-[#c39b5d]" />
                         </div>
                     </div>
                 </div>
 
                 {{-- Search button --}}
                 <div class="text-center">
-                    <button id="search-btn" class="inline-flex items-center rounded-md bg-emerald-600 px-10 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-emerald-700">
+                    <button id="search-btn" class="inline-flex items-center rounded-md bg-[#293953] px-10 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#1e2d42]">
                         Cari Properti
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1"><path d="m9 18 6-6-6-6"/></svg>
                     </button>
@@ -174,7 +174,7 @@
                 @foreach($steps as $step)
                     <div class="relative">
                         <div class="flex flex-col items-center text-center">
-                            <div class="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-600 text-lg font-bold text-white shadow-lg shadow-emerald-600/20">
+                            <div class="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#293953] text-lg font-bold text-white shadow-lg shadow-[#293953]/20">
                                 {{ $step['number'] }}
                             </div>
                             <h3 class="mb-2 text-lg font-semibold text-neutral-800">{{ $step['title'] }}</h3>
@@ -210,8 +210,8 @@
                     {{-- Floating badge --}}
                     <div class="absolute -bottom-4 left-4 rounded-xl bg-white p-4 shadow-xl sm:left-8">
                         <div class="flex items-center gap-3">
-                            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-600"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.77 4 4 0 0 1 0 6.76 4 4 0 0 1-4.78 4.77 4 4 0 0 1-6.74 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>
+                            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-[#f5f0e8]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#c39b5d]"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.77 4 4 0 0 1 0 6.76 4 4 0 0 1-4.78 4.77 4 4 0 0 1-6.74 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>
                             </div>
                             <div>
                                 <p class="text-sm font-semibold text-neutral-800">100% Terverifikasi</p>
@@ -224,7 +224,7 @@
                 {{-- Content --}}
                 <div>
                     <h2 class="text-3xl font-bold tracking-tight text-neutral-800 sm:text-4xl">
-                        Mengapa Memilih <span class="text-emerald-600">PropertiKu</span>?
+                        Mengapa Memilih <span class="text-[#c39b5d]">Toto Prime Realty</span>?
                     </h2>
                     <p class="mt-4 text-lg leading-relaxed text-neutral-500">
                         Kami bukan sekadar platform listing. Kami adalah fasilitator yang mendampingi Anda dari awal hingga akhir proses transaksi properti.
@@ -232,8 +232,8 @@
 
                     <div class="mt-8 space-y-6">
                         <div class="flex gap-4">
-                            <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-emerald-100">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-600"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+                            <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#293953]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#c39b5d]"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
                             </div>
                             <div>
                                 <h3 class="font-semibold text-neutral-800">Transaksi Aman & Transparan</h3>
@@ -241,8 +241,8 @@
                             </div>
                         </div>
                         <div class="flex gap-4">
-                            <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-cyan-100">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-600"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 0 3 3l1.5-1.5"/><path d="m18 6 .3-.3a2.4 2.4 0 0 0-3.4-3.4L6 11.1a8 8 0 0 0-2 3.2l-.9 2.6a1 1 0 0 0 1.2 1.3l2.5-.8a8 8 0 0 0 3.2-2l6-6.1"/></svg>
+                            <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#293953]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#c39b5d]"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 0 3 3l1.5-1.5"/><path d="m18 6 .3-.3a2.4 2.4 0 0 0-3.4-3.4L6 11.1a8 8 0 0 0-2 3.2l-.9 2.6a1 1 0 0 0 1.2 1.3l2.5-.8a8 8 0 0 0 3.2-2l6-6.1"/></svg>
                             </div>
                             <div>
                                 <h3 class="font-semibold text-neutral-800">Notaris Partner Terpercaya</h3>
@@ -250,8 +250,8 @@
                             </div>
                         </div>
                         <div class="flex gap-4">
-                            <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-amber-100">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-600"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></svg>
+                            <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#293953]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#c39b5d]"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></svg>
                             </div>
                             <div>
                                 <h3 class="font-semibold text-neutral-800">End-to-End Fasilitasi</h3>
@@ -259,8 +259,8 @@
                             </div>
                         </div>
                         <div class="flex gap-4">
-                            <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-violet-100">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-violet-600"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>
+                            <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#293953]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#c39b5d]"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>
                             </div>
                             <div>
                                 <h3 class="font-semibold text-neutral-800">Properti Terverifikasi</h3>
@@ -274,7 +274,7 @@
     </section>
 
     {{-- Stats Section --}}
-    <section id="stats-section" class="bg-emerald-700 py-16">
+    <section id="stats-section" class="bg-[#293953] py-16">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 gap-8 lg:grid-cols-4">
                 @php
@@ -291,7 +291,7 @@
                         <div class="text-3xl font-bold text-white sm:text-4xl">
                             <span class="stat-value" data-target="{{ $stat['value'] }}">0</span>{{ $stat['suffix'] }}
                         </div>
-                        <div class="mt-1 text-sm text-emerald-200">{{ $stat['label'] }}</div>
+                        <div class="mt-1 text-sm text-[#c39b5d]">{{ $stat['label'] }}</div>
                     </div>
                 @endforeach
             </div>
@@ -299,20 +299,20 @@
     </section>
 
     {{-- CTA Section --}}
-    <section class="relative overflow-hidden bg-emerald-600 py-16 sm:py-20">
+    <section class="relative overflow-hidden bg-[#293953] py-16 sm:py-20">
         <div class="absolute inset-0">
-            <div class="absolute -left-20 -top-20 h-72 w-72 rounded-full bg-emerald-500 opacity-40 blur-3xl"></div>
-            <div class="absolute -bottom-20 -right-20 h-72 w-72 rounded-full bg-cyan-500 opacity-30 blur-3xl"></div>
+            <div class="absolute -left-20 -top-20 h-72 w-72 rounded-full bg-[#344b6a] opacity-40 blur-3xl"></div>
+            <div class="absolute -bottom-20 -right-20 h-72 w-72 rounded-full bg-[#c39b5d] opacity-15 blur-3xl"></div>
         </div>
         <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-2xl text-center">
                 <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Siap Menemukan Properti Impian?</h2>
-                <p class="mt-4 text-lg text-emerald-100">
+                <p class="mt-4 text-lg text-[#d4b78a]">
                     Daftar sekarang dan biarkan kami bantu Anda menemukan properti yang tepat dengan proses yang aman dan transparan.
                 </p>
                 <div class="mt-8 flex flex-wrap justify-center gap-4">
-                    <a href="/register" class="inline-flex items-center rounded-lg bg-white px-6 py-3 text-sm font-semibold text-emerald-700 shadow-sm transition-colors hover:bg-emerald-50">
-                        Daftar Sekarang
+                    <a href="/kontak" class="inline-flex items-center rounded-lg bg-[#c39b5d] px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#b08a4e]">
+                        Hubungi Kami
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                     </a>
                     <a href="/kontak" class="inline-flex items-center rounded-lg border border-white/30 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10">
@@ -388,21 +388,21 @@ document.addEventListener('DOMContentLoaded', function () {
             const type = this.dataset.type;
             if (selectedTypes.has(type)) {
                 selectedTypes.delete(type);
-                this.classList.remove('border-emerald-500', 'bg-emerald-50', 'shadow-sm');
+                this.classList.remove('border-[#c39b5d]', 'bg-[#f5f0e8]', 'shadow-sm');
                 this.classList.add('border-neutral-200', 'bg-white');
-                this.querySelector('.type-icon').classList.remove('bg-emerald-500', 'text-white');
+                this.querySelector('.type-icon').classList.remove('bg-[#c39b5d]', 'text-white');
                 this.querySelector('.type-icon').classList.add('bg-neutral-100', 'text-neutral-500');
-                this.querySelector('.type-label').classList.remove('text-emerald-700');
+                this.querySelector('.type-label').classList.remove('text-[#293953]');
                 this.querySelector('.type-label').classList.add('text-neutral-700');
                 this.querySelector('.check-mark').classList.add('hidden');
                 this.querySelector('.check-mark').classList.remove('flex');
             } else {
                 selectedTypes.add(type);
-                this.classList.add('border-emerald-500', 'bg-emerald-50', 'shadow-sm');
+                this.classList.add('border-[#c39b5d]', 'bg-[#f5f0e8]', 'shadow-sm');
                 this.classList.remove('border-neutral-200', 'bg-white');
-                this.querySelector('.type-icon').classList.add('bg-emerald-500', 'text-white');
+                this.querySelector('.type-icon').classList.add('bg-[#c39b5d]', 'text-white');
                 this.querySelector('.type-icon').classList.remove('bg-neutral-100', 'text-neutral-500');
-                this.querySelector('.type-label').classList.add('text-emerald-700');
+                this.querySelector('.type-label').classList.add('text-[#293953]');
                 this.querySelector('.type-label').classList.remove('text-neutral-700');
                 this.querySelector('.check-mark').classList.remove('hidden');
                 this.querySelector('.check-mark').classList.add('flex');

@@ -33,7 +33,7 @@ type Props = {
 
 const props = defineProps<Props>();
 
-const selectClass = 'border-neutral-300 bg-white placeholder:text-neutral-400 focus:ring-emerald-500 focus:border-emerald-500 mt-1 flex h-9 w-full rounded-md border px-3 py-1 text-sm shadow-sm transition-colors focus:outline-none focus:ring-1';
+const selectClass = 'border-neutral-300 bg-white placeholder:text-neutral-400 focus:ring-[#c39b5d] focus:border-[#c39b5d] mt-1 flex h-9 w-full rounded-md border px-3 py-1 text-sm shadow-sm transition-colors focus:outline-none focus:ring-1';
 
 const filters = ref<Record<string, string>>({
     search: props.filters.search ?? '',
@@ -168,7 +168,7 @@ function applyPricePreset(preset: { min: string; max: string }) {
                             v-model="filters.search"
                             type="search"
                             placeholder="Cari berdasarkan nama, alamat, kecamatan, atau kota..."
-                            class="w-full rounded-md border border-neutral-300 bg-white py-2 pl-10 pr-3 text-sm shadow-sm placeholder:text-neutral-400 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                            class="w-full rounded-md border border-neutral-300 bg-white py-2 pl-10 pr-3 text-sm shadow-sm placeholder:text-neutral-400 focus:border-[#c39b5d] focus:outline-none focus:ring-1 focus:ring-[#c39b5d]"
                         />
                     </div>
                     <div class="flex items-center gap-2">
@@ -244,7 +244,7 @@ function applyPricePreset(preset: { min: string; max: string }) {
                     >
                         <SlidersHorizontal class="h-4 w-4" />
                         Filter Lanjutan
-                        <span v-if="activeFilterCount > 0" class="ml-1 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-emerald-600 px-1.5 text-xs text-white">
+                        <span v-if="activeFilterCount > 0" class="ml-1 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-[#293953] px-1.5 text-xs text-white">
                             {{ activeFilterCount }}
                         </span>
                         <ChevronUp v-if="showAdvancedFilters" class="ml-1 h-3 w-3" />
@@ -272,7 +272,7 @@ function applyPricePreset(preset: { min: string; max: string }) {
                                     v-for="preset in pricePresets"
                                     :key="preset.label"
                                     class="rounded-full border px-3 py-1 text-xs transition-colors"
-                                    :class="filters.min_price === preset.min && filters.max_price === preset.max ? 'border-emerald-600 bg-emerald-600 text-white' : 'border-neutral-300 bg-white text-neutral-700 hover:bg-emerald-50 hover:border-emerald-300 hover:text-emerald-700'"
+                                    :class="filters.min_price === preset.min && filters.max_price === preset.max ? 'border-[#293953] bg-[#293953] text-white' : 'border-neutral-300 bg-white text-neutral-700 hover:bg-[#f5f0e8] hover:border-[#c39b5d] hover:text-[#293953]'"
                                     @click="applyPricePreset(preset)"
                                 >
                                     {{ preset.label }}
@@ -283,7 +283,7 @@ function applyPricePreset(preset: { min: string; max: string }) {
                                     v-model="filters.min_price"
                                     type="number"
                                     placeholder="Harga Min"
-                                    class="w-full rounded-md border border-neutral-300 bg-white px-3 py-1.5 text-xs shadow-sm placeholder:text-neutral-400 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                                    class="w-full rounded-md border border-neutral-300 bg-white px-3 py-1.5 text-xs shadow-sm placeholder:text-neutral-400 focus:border-[#c39b5d] focus:outline-none focus:ring-1 focus:ring-[#c39b5d]"
                                     @change="applyFilters"
                                 />
                                 <span class="text-xs text-neutral-400">-</span>
@@ -291,7 +291,7 @@ function applyPricePreset(preset: { min: string; max: string }) {
                                     v-model="filters.max_price"
                                     type="number"
                                     placeholder="Harga Maks"
-                                    class="w-full rounded-md border border-neutral-300 bg-white px-3 py-1.5 text-xs shadow-sm placeholder:text-neutral-400 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                                    class="w-full rounded-md border border-neutral-300 bg-white px-3 py-1.5 text-xs shadow-sm placeholder:text-neutral-400 focus:border-[#c39b5d] focus:outline-none focus:ring-1 focus:ring-[#c39b5d]"
                                     @change="applyFilters"
                                 />
                             </div>
@@ -305,7 +305,7 @@ function applyPricePreset(preset: { min: string; max: string }) {
                                     v-model="filters.min_land_area"
                                     type="number"
                                     placeholder="Min"
-                                    class="w-full rounded-md border border-neutral-300 bg-white px-3 py-1.5 text-xs shadow-sm placeholder:text-neutral-400 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                                    class="w-full rounded-md border border-neutral-300 bg-white px-3 py-1.5 text-xs shadow-sm placeholder:text-neutral-400 focus:border-[#c39b5d] focus:outline-none focus:ring-1 focus:ring-[#c39b5d]"
                                     @change="applyFilters"
                                 />
                                 <span class="text-xs text-neutral-400">-</span>
@@ -313,7 +313,7 @@ function applyPricePreset(preset: { min: string; max: string }) {
                                     v-model="filters.max_land_area"
                                     type="number"
                                     placeholder="Maks"
-                                    class="w-full rounded-md border border-neutral-300 bg-white px-3 py-1.5 text-xs shadow-sm placeholder:text-neutral-400 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                                    class="w-full rounded-md border border-neutral-300 bg-white px-3 py-1.5 text-xs shadow-sm placeholder:text-neutral-400 focus:border-[#c39b5d] focus:outline-none focus:ring-1 focus:ring-[#c39b5d]"
                                     @change="applyFilters"
                                 />
                             </div>
@@ -327,7 +327,7 @@ function applyPricePreset(preset: { min: string; max: string }) {
                                     v-model="filters.min_building_area"
                                     type="number"
                                     placeholder="Min"
-                                    class="w-full rounded-md border border-neutral-300 bg-white px-3 py-1.5 text-xs shadow-sm placeholder:text-neutral-400 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                                    class="w-full rounded-md border border-neutral-300 bg-white px-3 py-1.5 text-xs shadow-sm placeholder:text-neutral-400 focus:border-[#c39b5d] focus:outline-none focus:ring-1 focus:ring-[#c39b5d]"
                                     @change="applyFilters"
                                 />
                                 <span class="text-xs text-neutral-400">-</span>
@@ -335,7 +335,7 @@ function applyPricePreset(preset: { min: string; max: string }) {
                                     v-model="filters.max_building_area"
                                     type="number"
                                     placeholder="Maks"
-                                    class="w-full rounded-md border border-neutral-300 bg-white px-3 py-1.5 text-xs shadow-sm placeholder:text-neutral-400 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                                    class="w-full rounded-md border border-neutral-300 bg-white px-3 py-1.5 text-xs shadow-sm placeholder:text-neutral-400 focus:border-[#c39b5d] focus:outline-none focus:ring-1 focus:ring-[#c39b5d]"
                                     @change="applyFilters"
                                 />
                             </div>
@@ -393,91 +393,91 @@ function applyPricePreset(preset: { min: string; max: string }) {
                 <div v-if="hasActiveFilters" class="mt-3 flex flex-wrap gap-1.5">
                     <span
                         v-if="filters.property_type"
-                        class="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 pr-1 text-xs font-medium text-emerald-700"
+                        class="inline-flex items-center gap-1 rounded-full bg-[#f5f0e8] px-2.5 py-1 pr-1 text-xs font-medium text-[#293953]"
                     >
                         {{ propertyTypes.find(t => t.value === filters.property_type)?.name ?? filters.property_type }}
-                        <button class="ml-1 rounded-full p-0.5 hover:bg-emerald-200" @click="filters.property_type = ''; applyFilters()">
+                        <button class="ml-1 rounded-full p-0.5 hover:bg-[#e8dcc8]" @click="filters.property_type = ''; applyFilters()">
                             <X class="h-3 w-3" />
                         </button>
                     </span>
                     <span
                         v-if="filters.listing_type"
-                        class="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 pr-1 text-xs font-medium text-emerald-700"
+                        class="inline-flex items-center gap-1 rounded-full bg-[#f5f0e8] px-2.5 py-1 pr-1 text-xs font-medium text-[#293953]"
                     >
                         {{ listingTypes.find(t => t.value === filters.listing_type)?.name ?? filters.listing_type }}
-                        <button class="ml-1 rounded-full p-0.5 hover:bg-emerald-200" @click="filters.listing_type = ''; applyFilters()">
+                        <button class="ml-1 rounded-full p-0.5 hover:bg-[#e8dcc8]" @click="filters.listing_type = ''; applyFilters()">
                             <X class="h-3 w-3" />
                         </button>
                     </span>
                     <span
                         v-if="filters.city"
-                        class="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 pr-1 text-xs font-medium text-emerald-700"
+                        class="inline-flex items-center gap-1 rounded-full bg-[#f5f0e8] px-2.5 py-1 pr-1 text-xs font-medium text-[#293953]"
                     >
                         {{ filters.city }}
-                        <button class="ml-1 rounded-full p-0.5 hover:bg-emerald-200" @click="filters.city = ''; applyFilters()">
+                        <button class="ml-1 rounded-full p-0.5 hover:bg-[#e8dcc8]" @click="filters.city = ''; applyFilters()">
                             <X class="h-3 w-3" />
                         </button>
                     </span>
                     <span
                         v-if="filters.min_price || filters.max_price"
-                        class="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 pr-1 text-xs font-medium text-emerald-700"
+                        class="inline-flex items-center gap-1 rounded-full bg-[#f5f0e8] px-2.5 py-1 pr-1 text-xs font-medium text-[#293953]"
                     >
                         Harga: {{ filters.min_price ? formatCurrency(Number(filters.min_price)) : '0' }} - {{ filters.max_price ? formatCurrency(Number(filters.max_price)) : '∞' }}
-                        <button class="ml-1 rounded-full p-0.5 hover:bg-emerald-200" @click="filters.min_price = ''; filters.max_price = ''; applyFilters()">
+                        <button class="ml-1 rounded-full p-0.5 hover:bg-[#e8dcc8]" @click="filters.min_price = ''; filters.max_price = ''; applyFilters()">
                             <X class="h-3 w-3" />
                         </button>
                     </span>
                     <span
                         v-if="filters.bedrooms"
-                        class="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 pr-1 text-xs font-medium text-emerald-700"
+                        class="inline-flex items-center gap-1 rounded-full bg-[#f5f0e8] px-2.5 py-1 pr-1 text-xs font-medium text-[#293953]"
                     >
                         {{ filters.bedrooms }}+ KT
-                        <button class="ml-1 rounded-full p-0.5 hover:bg-emerald-200" @click="filters.bedrooms = ''; applyFilters()">
+                        <button class="ml-1 rounded-full p-0.5 hover:bg-[#e8dcc8]" @click="filters.bedrooms = ''; applyFilters()">
                             <X class="h-3 w-3" />
                         </button>
                     </span>
                     <span
                         v-if="filters.bathrooms"
-                        class="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 pr-1 text-xs font-medium text-emerald-700"
+                        class="inline-flex items-center gap-1 rounded-full bg-[#f5f0e8] px-2.5 py-1 pr-1 text-xs font-medium text-[#293953]"
                     >
                         {{ filters.bathrooms }}+ KM
-                        <button class="ml-1 rounded-full p-0.5 hover:bg-emerald-200" @click="filters.bathrooms = ''; applyFilters()">
+                        <button class="ml-1 rounded-full p-0.5 hover:bg-[#e8dcc8]" @click="filters.bathrooms = ''; applyFilters()">
                             <X class="h-3 w-3" />
                         </button>
                     </span>
                     <span
                         v-if="filters.min_land_area || filters.max_land_area"
-                        class="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 pr-1 text-xs font-medium text-emerald-700"
+                        class="inline-flex items-center gap-1 rounded-full bg-[#f5f0e8] px-2.5 py-1 pr-1 text-xs font-medium text-[#293953]"
                     >
                         LT: {{ filters.min_land_area || '0' }} - {{ filters.max_land_area || '∞' }} m²
-                        <button class="ml-1 rounded-full p-0.5 hover:bg-emerald-200" @click="filters.min_land_area = ''; filters.max_land_area = ''; applyFilters()">
+                        <button class="ml-1 rounded-full p-0.5 hover:bg-[#e8dcc8]" @click="filters.min_land_area = ''; filters.max_land_area = ''; applyFilters()">
                             <X class="h-3 w-3" />
                         </button>
                     </span>
                     <span
                         v-if="filters.min_building_area || filters.max_building_area"
-                        class="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 pr-1 text-xs font-medium text-emerald-700"
+                        class="inline-flex items-center gap-1 rounded-full bg-[#f5f0e8] px-2.5 py-1 pr-1 text-xs font-medium text-[#293953]"
                     >
                         LB: {{ filters.min_building_area || '0' }} - {{ filters.max_building_area || '∞' }} m²
-                        <button class="ml-1 rounded-full p-0.5 hover:bg-emerald-200" @click="filters.min_building_area = ''; filters.max_building_area = ''; applyFilters()">
+                        <button class="ml-1 rounded-full p-0.5 hover:bg-[#e8dcc8]" @click="filters.min_building_area = ''; filters.max_building_area = ''; applyFilters()">
                             <X class="h-3 w-3" />
                         </button>
                     </span>
                     <span
                         v-if="filters.certificate_type"
-                        class="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 pr-1 text-xs font-medium text-emerald-700"
+                        class="inline-flex items-center gap-1 rounded-full bg-[#f5f0e8] px-2.5 py-1 pr-1 text-xs font-medium text-[#293953]"
                     >
                         {{ certificateTypes.find(t => t.value === filters.certificate_type)?.name ?? filters.certificate_type }}
-                        <button class="ml-1 rounded-full p-0.5 hover:bg-emerald-200" @click="filters.certificate_type = ''; applyFilters()">
+                        <button class="ml-1 rounded-full p-0.5 hover:bg-[#e8dcc8]" @click="filters.certificate_type = ''; applyFilters()">
                             <X class="h-3 w-3" />
                         </button>
                     </span>
                     <span
                         v-if="filters.furnishing"
-                        class="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 pr-1 text-xs font-medium text-emerald-700"
+                        class="inline-flex items-center gap-1 rounded-full bg-[#f5f0e8] px-2.5 py-1 pr-1 text-xs font-medium text-[#293953]"
                     >
                         {{ furnishingTypes.find(t => t.value === filters.furnishing)?.name ?? filters.furnishing }}
-                        <button class="ml-1 rounded-full p-0.5 hover:bg-emerald-200" @click="filters.furnishing = ''; applyFilters()">
+                        <button class="ml-1 rounded-full p-0.5 hover:bg-[#e8dcc8]" @click="filters.furnishing = ''; applyFilters()">
                             <X class="h-3 w-3" />
                         </button>
                     </span>
@@ -534,7 +534,7 @@ function applyPricePreset(preset: { min: string; max: string }) {
                             <!-- Listing Type Badge -->
                             <span
                                 class="absolute left-3 top-3 rounded-full px-2.5 py-1 text-xs font-semibold"
-                                :class="property.listing_type === 'dijual' ? 'bg-emerald-600 text-white' : 'bg-amber-500 text-white'"
+                                :class="property.listing_type === 'dijual' ? 'bg-[#293953] text-white' : 'bg-amber-500 text-white'"
                             >
                                 {{ listingTypeLabel[property.listing_type] ?? property.listing_type }}
                             </span>
@@ -546,7 +546,7 @@ function applyPricePreset(preset: { min: string; max: string }) {
 
                         <div class="p-4">
                             <!-- Price -->
-                            <p class="text-lg font-bold text-emerald-600">
+                            <p class="text-lg font-bold text-[#293953]">
                                 {{ formatCurrency(property.price) }}
                             </p>
 
@@ -591,7 +591,7 @@ function applyPricePreset(preset: { min: string; max: string }) {
                         v-if="link.url"
                         :href="link.url"
                         class="inline-flex items-center rounded-md border px-3 py-1.5 text-sm font-medium transition-colors"
-                        :class="link.active ? 'border-emerald-600 bg-emerald-600 text-white' : 'border-neutral-300 bg-white text-neutral-700 hover:bg-neutral-50'"
+                        :class="link.active ? 'border-[#293953] bg-[#293953] text-white' : 'border-neutral-300 bg-white text-neutral-700 hover:bg-neutral-50'"
                         v-html="link.label"
                         preserve-state
                     />

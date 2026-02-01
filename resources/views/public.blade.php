@@ -19,7 +19,7 @@
             <meta property="og:type" content="{{ $seo['type'] ?? 'website' }}">
             <meta property="og:url" content="{{ url()->current() }}">
             <meta property="og:locale" content="id_ID">
-            <meta property="og:site_name" content="{{ config('app.name', 'PropertiKu') }}">
+            <meta property="og:site_name" content="{{ config('app.name', 'Toto Prime Realty') }}">
             @if(!empty($seo['image']))
                 <meta property="og:image" content="{{ $seo['image'] }}">
             @endif
@@ -42,7 +42,7 @@
         @else
             <title inertia>{{ config('app.name', 'Laravel') }}</title>
             <meta property="og:locale" content="id_ID">
-            <meta property="og:site_name" content="{{ config('app.name', 'PropertiKu') }}">
+            <meta property="og:site_name" content="{{ config('app.name', 'Toto Prime Realty') }}">
         @endif
 
         <link rel="icon" href="/favicon.ico" sizes="any">
@@ -69,7 +69,7 @@
         @vite(['resources/js/app.ts', "resources/js/pages/{$page['component']}.vue"])
         @inertiaHead
 
-        {{-- Override theme variables: emerald light theme for public pages --}}
+        {{-- Override theme variables: navy/gold light theme for public pages --}}
         <style>
             :root, .dark {
                 --background: hsl(0 0% 100%) !important;
@@ -78,30 +78,30 @@
                 --card-foreground: hsl(215 25% 27%) !important;
                 --popover: hsl(0 0% 100%) !important;
                 --popover-foreground: hsl(215 25% 27%) !important;
-                --primary: hsl(160 84% 39%) !important;
+                --primary: hsl(218 33% 24%) !important;
                 --primary-foreground: hsl(0 0% 100%) !important;
-                --secondary: hsl(152 76% 95%) !important;
-                --secondary-foreground: hsl(160 84% 25%) !important;
-                --muted: hsl(152 40% 97%) !important;
+                --secondary: hsl(38 35% 94%) !important;
+                --secondary-foreground: hsl(218 33% 24%) !important;
+                --muted: hsl(38 20% 97%) !important;
                 --muted-foreground: hsl(215 16% 47%) !important;
-                --accent: hsl(152 76% 95%) !important;
-                --accent-foreground: hsl(160 84% 25%) !important;
+                --accent: hsl(38 35% 94%) !important;
+                --accent-foreground: hsl(218 33% 24%) !important;
                 --destructive: hsl(0 84.2% 60.2%) !important;
                 --destructive-foreground: hsl(0 0% 98%) !important;
-                --border: hsl(152 20% 90%) !important;
-                --input: hsl(152 20% 88%) !important;
-                --ring: hsl(160 84% 39%) !important;
+                --border: hsl(38 35% 85%) !important;
+                --input: hsl(38 35% 85%) !important;
+                --ring: hsl(37 40% 50%) !important;
                 --radius: 0.5rem;
                 --sidebar-background: hsl(0 0% 98%) !important;
                 --sidebar-foreground: hsl(240 5.3% 26.1%) !important;
-                --sidebar-primary: hsl(160 84% 39%) !important;
+                --sidebar-primary: hsl(218 33% 24%) !important;
                 --sidebar-primary-foreground: hsl(0 0% 98%) !important;
-                --sidebar-accent: hsl(152 76% 95%) !important;
-                --sidebar-accent-foreground: hsl(160 84% 25%) !important;
-                --sidebar-border: hsl(152 20% 90%) !important;
-                --sidebar-ring: hsl(160 84% 39%) !important;
-                --chart-1: hsl(160 84% 39%) !important;
-                --chart-2: hsl(173 58% 39%) !important;
+                --sidebar-accent: hsl(38 35% 94%) !important;
+                --sidebar-accent-foreground: hsl(218 33% 24%) !important;
+                --sidebar-border: hsl(38 35% 85%) !important;
+                --sidebar-ring: hsl(37 40% 50%) !important;
+                --chart-1: hsl(218 33% 24%) !important;
+                --chart-2: hsl(37 40% 50%) !important;
                 --chart-3: hsl(197 37% 24%) !important;
                 --chart-4: hsl(43 74% 66%) !important;
                 --chart-5: hsl(27 87% 67%) !important;

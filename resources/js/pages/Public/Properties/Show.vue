@@ -186,8 +186,8 @@ const contactMethodLabel: Record<string, string> = {
     email: 'Email',
 };
 
-const inputClass = 'w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-sm shadow-sm placeholder:text-neutral-400 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500';
-const selectClass = 'w-full rounded-md border border-neutral-300 bg-white px-3 py-1 text-sm shadow-sm focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500 mt-1 flex h-9';
+const inputClass = 'w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-sm shadow-sm placeholder:text-neutral-400 focus:border-[#c39b5d] focus:outline-none focus:ring-1 focus:ring-[#c39b5d]';
+const selectClass = 'w-full rounded-md border border-neutral-300 bg-white px-3 py-1 text-sm shadow-sm focus:border-[#c39b5d] focus:outline-none focus:ring-1 focus:ring-[#c39b5d] mt-1 flex h-9';
 </script>
 
 <template>
@@ -204,7 +204,7 @@ const selectClass = 'w-full rounded-md border border-neutral-300 bg-white px-3 p
         <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
             <!-- Breadcrumb -->
             <nav class="mb-4 flex items-center gap-2 text-sm text-neutral-500">
-                <Link href="/properti" class="hover:text-emerald-600">Properti</Link>
+                <Link href="/properti" class="hover:text-[#293953]">Properti</Link>
                 <span>/</span>
                 <span class="line-clamp-1 text-neutral-800">{{ property.title }}</span>
             </nav>
@@ -255,7 +255,7 @@ const selectClass = 'w-full rounded-md border border-neutral-300 bg-white px-3 p
                                 v-for="(media, index) in images"
                                 :key="media.id"
                                 class="shrink-0 overflow-hidden rounded-md border-2 transition-colors"
-                                :class="index === selectedImageIndex ? 'border-emerald-600' : 'border-transparent opacity-60 hover:opacity-100'"
+                                :class="index === selectedImageIndex ? 'border-[#293953]' : 'border-transparent opacity-60 hover:opacity-100'"
                                 @click="selectedImageIndex = index"
                             >
                                 <img
@@ -273,7 +273,7 @@ const selectClass = 'w-full rounded-md border border-neutral-300 bg-white px-3 p
                         <div class="flex flex-wrap items-start gap-2">
                             <span
                                 class="rounded-full px-2.5 py-1 text-xs font-semibold"
-                                :class="property.listing_type === 'dijual' ? 'bg-emerald-600 text-white' : 'bg-amber-500 text-white'"
+                                :class="property.listing_type === 'dijual' ? 'bg-[#293953] text-white' : 'bg-amber-500 text-white'"
                             >
                                 {{ listingTypeLabel[property.listing_type] ?? property.listing_type }}
                             </span>
@@ -285,7 +285,7 @@ const selectClass = 'w-full rounded-md border border-neutral-300 bg-white px-3 p
                             </span>
                         </div>
                         <h1 class="mt-3 text-2xl font-bold text-neutral-800 sm:text-3xl">{{ property.title }}</h1>
-                        <p class="mt-2 text-2xl font-bold text-emerald-600">
+                        <p class="mt-2 text-2xl font-bold text-[#293953]">
                             {{ formatFullCurrency(property.price) }}
                         </p>
                         <p v-if="property.listing_type === 'disewakan'" class="text-sm text-neutral-500">per tahun</p>
@@ -299,56 +299,56 @@ const selectClass = 'w-full rounded-md border border-neutral-300 bg-white px-3 p
                         <div class="p-6">
                             <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
                                 <div class="flex items-center gap-3 rounded-lg border border-neutral-200 p-3">
-                                    <Ruler class="h-5 w-5 shrink-0 text-emerald-600" />
+                                    <Ruler class="h-5 w-5 shrink-0 text-[#293953]" />
                                     <div>
                                         <p class="text-xs text-neutral-500">Luas Tanah</p>
                                         <p class="text-sm font-semibold text-neutral-800">{{ property.land_area }} m&sup2;</p>
                                     </div>
                                 </div>
                                 <div v-if="property.building_area" class="flex items-center gap-3 rounded-lg border border-neutral-200 p-3">
-                                    <Home class="h-5 w-5 shrink-0 text-emerald-600" />
+                                    <Home class="h-5 w-5 shrink-0 text-[#293953]" />
                                     <div>
                                         <p class="text-xs text-neutral-500">Luas Bangunan</p>
                                         <p class="text-sm font-semibold text-neutral-800">{{ property.building_area }} m&sup2;</p>
                                     </div>
                                 </div>
                                 <div v-if="property.bedrooms" class="flex items-center gap-3 rounded-lg border border-neutral-200 p-3">
-                                    <BedDouble class="h-5 w-5 shrink-0 text-emerald-600" />
+                                    <BedDouble class="h-5 w-5 shrink-0 text-[#293953]" />
                                     <div>
                                         <p class="text-xs text-neutral-500">Kamar Tidur</p>
                                         <p class="text-sm font-semibold text-neutral-800">{{ property.bedrooms }}</p>
                                     </div>
                                 </div>
                                 <div v-if="property.bathrooms" class="flex items-center gap-3 rounded-lg border border-neutral-200 p-3">
-                                    <Bath class="h-5 w-5 shrink-0 text-emerald-600" />
+                                    <Bath class="h-5 w-5 shrink-0 text-[#293953]" />
                                     <div>
                                         <p class="text-xs text-neutral-500">Kamar Mandi</p>
                                         <p class="text-sm font-semibold text-neutral-800">{{ property.bathrooms }}</p>
                                     </div>
                                 </div>
                                 <div class="flex items-center gap-3 rounded-lg border border-neutral-200 p-3">
-                                    <Layers class="h-5 w-5 shrink-0 text-emerald-600" />
+                                    <Layers class="h-5 w-5 shrink-0 text-[#293953]" />
                                     <div>
                                         <p class="text-xs text-neutral-500">Lantai</p>
                                         <p class="text-sm font-semibold text-neutral-800">{{ property.floors }}</p>
                                     </div>
                                 </div>
                                 <div v-if="property.parking_spaces" class="flex items-center gap-3 rounded-lg border border-neutral-200 p-3">
-                                    <Car class="h-5 w-5 shrink-0 text-emerald-600" />
+                                    <Car class="h-5 w-5 shrink-0 text-[#293953]" />
                                     <div>
                                         <p class="text-xs text-neutral-500">Parkir</p>
                                         <p class="text-sm font-semibold text-neutral-800">{{ property.parking_spaces }}</p>
                                     </div>
                                 </div>
                                 <div class="flex items-center gap-3 rounded-lg border border-neutral-200 p-3">
-                                    <Sofa class="h-5 w-5 shrink-0 text-emerald-600" />
+                                    <Sofa class="h-5 w-5 shrink-0 text-[#293953]" />
                                     <div>
                                         <p class="text-xs text-neutral-500">Furnishing</p>
                                         <p class="text-sm font-semibold text-neutral-800">{{ furnishingLabel[property.furnishing] ?? property.furnishing }}</p>
                                     </div>
                                 </div>
                                 <div v-if="property.facing_direction" class="flex items-center gap-3 rounded-lg border border-neutral-200 p-3">
-                                    <Compass class="h-5 w-5 shrink-0 text-emerald-600" />
+                                    <Compass class="h-5 w-5 shrink-0 text-[#293953]" />
                                     <div>
                                         <p class="text-xs text-neutral-500">Hadap</p>
                                         <p class="text-sm font-semibold text-neutral-800">{{ property.facing_direction }}</p>
@@ -375,7 +375,7 @@ const selectClass = 'w-full rounded-md border border-neutral-300 bg-white px-3 p
                         </div>
                         <div class="p-6">
                             <div class="flex items-start gap-3">
-                                <MapPin class="mt-0.5 h-5 w-5 shrink-0 text-emerald-600" />
+                                <MapPin class="mt-0.5 h-5 w-5 shrink-0 text-[#293953]" />
                                 <div>
                                     <p class="text-sm font-medium text-neutral-800">{{ property.address }}</p>
                                     <p class="mt-1 text-sm text-neutral-500">
@@ -394,7 +394,7 @@ const selectClass = 'w-full rounded-md border border-neutral-300 bg-white px-3 p
                         </div>
                         <div class="p-6">
                             <div class="flex items-center gap-3">
-                                <FileText class="h-5 w-5 shrink-0 text-emerald-600" />
+                                <FileText class="h-5 w-5 shrink-0 text-[#293953]" />
                                 <div>
                                     <p class="text-sm font-medium text-neutral-800">
                                         {{ certificateTypeLabel[property.certificate_type] ?? property.certificate_type }}
@@ -412,7 +412,7 @@ const selectClass = 'w-full rounded-md border border-neutral-300 bg-white px-3 p
                         </div>
                         <div class="p-6">
                             <div class="flex flex-wrap gap-2">
-                                <span v-for="feature in property.features" :key="feature.id" class="rounded-full bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-700">
+                                <span v-for="feature in property.features" :key="feature.id" class="rounded-full bg-[#f5f0e8] px-3 py-1 text-xs font-medium text-[#1e2d42]">
                                     {{ feature.feature_name }}
                                 </span>
                             </div>
@@ -429,8 +429,8 @@ const selectClass = 'w-full rounded-md border border-neutral-300 bg-white px-3 p
                         </div>
                         <div class="p-6">
                             <div v-if="property.seller" class="flex items-center gap-3">
-                                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-50">
-                                    <User class="h-6 w-6 text-emerald-600" />
+                                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-[#f5f0e8]">
+                                    <User class="h-6 w-6 text-[#293953]" />
                                 </div>
                                 <div>
                                     <p class="font-semibold text-neutral-800">{{ property.seller.name }}</p>
@@ -450,7 +450,7 @@ const selectClass = 'w-full rounded-md border border-neutral-300 bg-white px-3 p
                         <div class="p-6">
                             <!-- Success State -->
                             <div v-if="inquirySubmitted" class="py-4 text-center">
-                                <CheckCircle class="mx-auto mb-3 h-10 w-10 text-emerald-500" />
+                                <CheckCircle class="mx-auto mb-3 h-10 w-10 text-[#c39b5d]" />
                                 <h3 class="font-semibold text-neutral-800">Pertanyaan Terkirim!</h3>
                                 <p class="mt-1 text-sm text-neutral-500">
                                     Kami akan segera menghubungi Anda melalui metode kontak yang dipilih.
@@ -517,7 +517,7 @@ const selectClass = 'w-full rounded-md border border-neutral-300 bg-white px-3 p
                                         id="inquiry-message"
                                         v-model="inquiryForm.message"
                                         rows="4"
-                                        class="mt-1 w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-sm shadow-sm placeholder:text-neutral-400 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                                        class="mt-1 w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-sm shadow-sm placeholder:text-neutral-400 focus:border-[#c39b5d] focus:outline-none focus:ring-1 focus:ring-[#c39b5d]"
                                         placeholder="Tulis pesan Anda..."
                                         required
                                     />
@@ -543,7 +543,7 @@ const selectClass = 'w-full rounded-md border border-neutral-300 bg-white px-3 p
 
                                 <button
                                     type="submit"
-                                    class="inline-flex w-full items-center justify-center rounded-md bg-emerald-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-emerald-700 disabled:opacity-50"
+                                    class="inline-flex w-full items-center justify-center rounded-md bg-[#293953] px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#1e2d42] disabled:opacity-50"
                                     :disabled="inquiryForm.processing"
                                 >
                                     <Send class="mr-2 h-4 w-4" />
@@ -580,13 +580,13 @@ const selectClass = 'w-full rounded-md border border-neutral-300 bg-white px-3 p
                                 </div>
                                 <span
                                     class="absolute left-2 top-2 rounded-full px-2.5 py-1 text-xs font-semibold"
-                                    :class="related.listing_type === 'dijual' ? 'bg-emerald-600 text-white' : 'bg-amber-500 text-white'"
+                                    :class="related.listing_type === 'dijual' ? 'bg-[#293953] text-white' : 'bg-amber-500 text-white'"
                                 >
                                     {{ listingTypeLabel[related.listing_type] ?? related.listing_type }}
                                 </span>
                             </div>
                             <div class="p-3">
-                                <p class="text-sm font-bold text-emerald-600">{{ formatCurrency(related.price) }}</p>
+                                <p class="text-sm font-bold text-[#293953]">{{ formatCurrency(related.price) }}</p>
                                 <h3 class="mt-1 line-clamp-1 text-sm font-semibold text-neutral-800 group-hover:underline">
                                     {{ related.title }}
                                 </h3>

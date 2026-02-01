@@ -2,11 +2,11 @@
 
 @section('content')
     {{-- Hero --}}
-    <section class="bg-gradient-to-br from-emerald-600 to-teal-700 py-20 sm:py-28">
+    <section class="bg-gradient-to-br from-[#293953] to-[#1e2d42] py-20 sm:py-28">
         <div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
             <h1 class="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">Layanan Kami</h1>
-            <p class="mx-auto mt-4 max-w-2xl text-lg text-emerald-100">
-                PropertiKu menyediakan layanan fasilitasi properti end-to-end, dari pencarian hingga serah terima sertifikat.
+            <p class="mx-auto mt-4 max-w-2xl text-lg text-[#d4b78a]">
+                Toto Prime Realty menyediakan layanan fasilitasi properti end-to-end, dari pencarian hingga serah terima sertifikat.
             </p>
         </div>
     </section>
@@ -32,11 +32,11 @@
                 @foreach($steps as $step)
                     <div class="rounded-xl border border-neutral-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
                         <div class="mb-4 flex items-center gap-3">
-                            <div class="flex h-11 w-11 items-center justify-center rounded-lg bg-emerald-600 text-white">
+                            <div class="flex h-11 w-11 items-center justify-center rounded-lg bg-[#293953] text-white">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">{!! $step['icon'] !!}</svg>
                             </div>
                             <div>
-                                <span class="text-xs font-medium text-emerald-600">{{ $step['stage'] }}</span>
+                                <span class="text-xs font-medium text-[#c39b5d]">{{ $step['stage'] }}</span>
                                 <h3 class="font-semibold text-neutral-800">{{ $step['title'] }}</h3>
                             </div>
                         </div>
@@ -48,28 +48,28 @@
     </section>
 
     {{-- Layanan Tambahan --}}
-    <section class="bg-emerald-50 py-16">
+    <section class="bg-[#f5f0e8] py-16">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <h2 class="text-center text-2xl font-bold text-neutral-800">Layanan untuk Penjual</h2>
             <p class="mt-2 text-center text-neutral-500">Kami juga membantu penjual dalam memasarkan properti mereka</p>
             <div class="mt-12 grid gap-8 lg:grid-cols-3">
                 <div class="rounded-xl bg-white p-6 shadow-sm">
-                    <div class="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-600"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    <div class="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-[#f5f0e8]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#c39b5d]"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
                     </div>
                     <h3 class="font-semibold text-neutral-800">Listing Properti</h3>
                     <p class="mt-2 text-sm text-neutral-500">Daftarkan properti Anda secara gratis. Tim kami akan bantu review dan optimalkan listing Anda agar cepat terjual.</p>
                 </div>
                 <div class="rounded-xl bg-white p-6 shadow-sm">
-                    <div class="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-600"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>
+                    <div class="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-[#f5f0e8]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#c39b5d]"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>
                     </div>
                     <h3 class="font-semibold text-neutral-800">Manajemen Inquiry</h3>
                     <p class="mt-2 text-sm text-neutral-500">Kelola semua pertanyaan dan permintaan viewing dari calon pembeli dalam satu dashboard.</p>
                 </div>
                 <div class="rounded-xl bg-white p-6 shadow-sm">
-                    <div class="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-600"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 0 3 3l1.5-1.5"/><path d="m18 6 .3-.3a2.4 2.4 0 0 0-3.4-3.4L6 11.1a8 8 0 0 0-2 3.2l-.9 2.6a1 1 0 0 0 1.2 1.3l2.5-.8a8 8 0 0 0 3.2-2l6-6.1"/></svg>
+                    <div class="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-[#f5f0e8]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#c39b5d]"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 0 3 3l1.5-1.5"/><path d="m18 6 .3-.3a2.4 2.4 0 0 0-3.4-3.4L6 11.1a8 8 0 0 0-2 3.2l-.9 2.6a1 1 0 0 0 1.2 1.3l2.5-.8a8 8 0 0 0 3.2-2l6-6.1"/></svg>
                     </div>
                     <h3 class="font-semibold text-neutral-800">Pendampingan Transaksi</h3>
                     <p class="mt-2 text-sm text-neutral-500">Kami dampingi seluruh proses transaksi hingga selesai, termasuk koordinasi dengan notaris dan pengurusan dokumen.</p>
@@ -79,13 +79,13 @@
     </section>
 
     {{-- CTA --}}
-    <section class="bg-emerald-700 py-16">
+    <section class="bg-[#293953] py-16">
         <div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
             <h2 class="text-2xl font-bold text-white">Mulai Sekarang</h2>
-            <p class="mt-3 text-emerald-100">Daftar gratis dan nikmati kemudahan transaksi properti bersama PropertiKu</p>
+            <p class="mt-3 text-[#d4b78a]">Daftar gratis dan nikmati kemudahan transaksi properti bersama Toto Prime Realty</p>
             <div class="mt-8 flex justify-center gap-4">
-                <a href="/register" class="inline-flex items-center rounded-lg bg-white px-6 py-3 text-sm font-semibold text-emerald-700 shadow-sm transition-colors hover:bg-emerald-50">
-                    Daftar Sekarang
+                <a href="/kontak" class="inline-flex items-center rounded-lg bg-[#c39b5d] px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#b08a4e]">
+                    Hubungi Kami
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </a>
                 <a href="/kontak" class="inline-flex items-center rounded-lg border border-white/30 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10">

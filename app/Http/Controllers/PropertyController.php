@@ -114,7 +114,7 @@ class PropertyController extends Controller
             'relatedProperties' => $relatedProperties,
             'isFavorited' => auth()->check() ? auth()->user()->hasFavorited($property) : false,
             'seo' => [
-                'title' => $property->title.' - PropertiKu',
+                'title' => $property->title.' - Toto Prime Realty',
                 'description' => $seoDescription,
                 'keywords' => implode(', ', array_filter([
                     $property->property_type->label(),
