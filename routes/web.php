@@ -3,9 +3,8 @@
 use App\Http\Controllers\InquiryController;
 use App\Http\Controllers\PropertyController;
 use App\Http\Middleware\SetPublicRootView;
+use App\Http\Middleware\ShareSeoData;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
-use Laravel\Fortify\Features;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,22 +12,20 @@ use Laravel\Fortify\Features;
 |--------------------------------------------------------------------------
 */
 
-Route::middleware(SetPublicRootView::class)->group(function () {
-    Route::get('/', function () {
-        return Inertia::render('Welcome', [
-            'canRegister' => Features::enabled(Features::registration()),
-        ]);
-    })->name('home');
-
-    // Public property browsing
+Route::middleware([SetPublicRootView::class, ShareSeoData::class])->group(function () {
+    // Public property browsing (Inertia)
     Route::get('/properti', [PropertyController::class, 'index'])->name('properties.index');
     Route::get('/properti/{property:slug}', [PropertyController::class, 'show'])->name('properties.show');
     Route::post('/properti/{property:slug}/inquiry', [InquiryController::class, 'store'])->name('inquiries.store');
+});
 
-    // Static pages
-    Route::get('/tentang-kami', fn () => Inertia::render('Public/About'))->name('about');
-    Route::get('/layanan', fn () => Inertia::render('Public/Services'))->name('services');
-    Route::get('/kontak', fn () => Inertia::render('Public/Contact'))->name('contact');
+// Static pages (Blade — fully server-rendered, outside Inertia middleware)
+Route::middleware(ShareSeoData::class)->group(function () {
+    Route::get('/', fn () => view('public.home'))->name('home');
+    Route::get('/tentang-kami', fn () => view('public.about'))->name('about');
+    Route::get('/layanan', fn () => view('public.services'))->name('services');
+    Route::get('/kontak', fn () => view('public.contact'))->name('contact');
+    Route::post('/kontak', [App\Http\Controllers\ContactController::class, 'submit'])->name('contact.submit');
 });
 
 /*

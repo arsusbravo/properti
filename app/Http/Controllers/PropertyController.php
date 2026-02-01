@@ -102,10 +102,59 @@ class PropertyController extends Controller
             ->limit(4)
             ->get();
 
+        $seoDescription = strip_tags($property->description ?? '');
+        if (strlen($seoDescription) > 155) {
+            $seoDescription = rtrim(substr($seoDescription, 0, 155)).'...';
+        }
+
+        $seoImage = $property->media?->first()?->original_url;
+
         return Inertia::render('Public/Properties/Show', [
             'property' => $property,
             'relatedProperties' => $relatedProperties,
             'isFavorited' => auth()->check() ? auth()->user()->hasFavorited($property) : false,
+            'seo' => [
+                'title' => $property->title.' - PropertiKu',
+                'description' => $seoDescription,
+                'keywords' => implode(', ', array_filter([
+                    $property->property_type->label(),
+                    $property->listing_type->label(),
+                    $property->city,
+                    'properti '.$property->city,
+                ])),
+                'type' => 'article',
+                'image' => $seoImage,
+                'jsonLd' => [
+                    '@context' => 'https://schema.org',
+                    '@type' => 'RealEstateListing',
+                    'name' => $property->title,
+                    'description' => $seoDescription,
+                    'url' => route('properties.show', $property->slug),
+                    ...($seoImage ? ['image' => $seoImage] : []),
+                    'offers' => [
+                        '@type' => 'Offer',
+                        'price' => $property->price,
+                        'priceCurrency' => 'IDR',
+                        'availability' => $property->status === PropertyStatus::ACTIVE
+                            ? 'https://schema.org/InStock'
+                            : 'https://schema.org/SoldOut',
+                    ],
+                    'address' => [
+                        '@type' => 'PostalAddress',
+                        'streetAddress' => $property->address,
+                        'addressLocality' => $property->city,
+                        'addressRegion' => $property->province,
+                        'addressCountry' => 'ID',
+                    ],
+                    ...($property->latitude && $property->longitude ? [
+                        'geo' => [
+                            '@type' => 'GeoCoordinates',
+                            'latitude' => $property->latitude,
+                            'longitude' => $property->longitude,
+                        ],
+                    ] : []),
+                ],
+            ],
         ]);
     }
 

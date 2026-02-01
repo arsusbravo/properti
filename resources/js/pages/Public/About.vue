@@ -1,11 +1,16 @@
 <script setup lang="ts">
-import { Head, Link } from '@inertiajs/vue3';
+import { Link } from '@inertiajs/vue3';
+import SeoHead from '@/components/SeoHead.vue';
 import { Users, Shield, Handshake, MapPin, ArrowRight, CheckCircle } from 'lucide-vue-next';
 import PublicLayout from '@/layouts/PublicLayout.vue';
 </script>
 
 <template>
-    <Head title="Tentang Kami - PropertiKu" />
+    <SeoHead
+        title="Tentang Kami"
+        description="Kenali PropertiKu — platform fasilitator properti terpercaya di Jakarta yang membantu transaksi dari pencarian hingga serah terima sertifikat."
+        keywords="tentang propertiku, fasilitator properti jakarta, agen properti terpercaya"
+    />
 
     <PublicLayout>
         <!-- Hero -->

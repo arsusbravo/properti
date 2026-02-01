@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { Head, Link, router } from '@inertiajs/vue3';
+import { Link, router } from '@inertiajs/vue3';
+import SeoHead from '@/components/SeoHead.vue';
 import { type Property, type Paginated } from '@/types';
 import {
     Building2,
@@ -141,7 +142,11 @@ function applyPricePreset(preset: { min: string; max: string }) {
 </script>
 
 <template>
-    <Head title="Cari Properti - PropertiKu" />
+    <SeoHead
+        title="Cari Properti"
+        description="Temukan properti terbaik di Jakarta: rumah, apartemen, tanah, ruko, dan lainnya. Filter berdasarkan tipe, harga, lokasi, dan spesifikasi."
+        keywords="properti dijual jakarta, rumah dijual, apartemen jakarta, cari properti, tanah dijual jakarta"
+    />
 
     <PublicLayout>
         <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">

@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { Head, useForm } from '@inertiajs/vue3';
+import { useForm } from '@inertiajs/vue3';
+import SeoHead from '@/components/SeoHead.vue';
 import { Phone, Mail, MapPin, Clock, Send } from 'lucide-vue-next';
 import PublicLayout from '@/layouts/PublicLayout.vue';
 
@@ -22,7 +23,30 @@ const inputClass = 'w-full rounded-md border border-neutral-300 bg-white px-3 py
 </script>
 
 <template>
-    <Head title="Kontak - PropertiKu" />
+    <SeoHead
+        title="Hubungi Kami"
+        description="Hubungi PropertiKu untuk konsultasi properti di Jakarta. Kantor di Jl. Sudirman, Jakarta Selatan. Telepon, WhatsApp, atau email."
+        keywords="kontak propertiku, konsultasi properti jakarta"
+        :json-ld="{
+            '@context': 'https://schema.org',
+            '@type': 'LocalBusiness',
+            name: 'PropertiKu',
+            description: 'Platform fasilitator properti terpercaya di Jakarta',
+            address: {
+                '@type': 'PostalAddress',
+                streetAddress: 'Jl. Sudirman No. 123',
+                addressLocality: 'Jakarta Selatan',
+                postalCode: '12190',
+                addressCountry: 'ID',
+            },
+            telephone: '(021) 1234-5678',
+            email: 'info@propertiku.id',
+            openingHoursSpecification: [
+                { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday'], opens: '09:00', closes: '17:00' },
+                { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Saturday'], opens: '09:00', closes: '13:00' },
+            ],
+        }"
+    />
 
     <PublicLayout>
         <!-- Hero -->

@@ -8,9 +8,9 @@ const mobileMenuOpen = ref(false);
 
 const navLinks = [
     { href: '/properti', label: 'Properti' },
-    { href: '/tentang-kami', label: 'Tentang Kami' },
-    { href: '/layanan', label: 'Layanan' },
-    { href: '/kontak', label: 'Kontak' },
+    { href: '/tentang-kami', label: 'Tentang Kami', external: true },
+    { href: '/layanan', label: 'Layanan', external: true },
+    { href: '/kontak', label: 'Kontak', external: true },
 ];
 </script>
 
@@ -19,22 +19,30 @@ const navLinks = [
         <!-- Header -->
         <header class="fixed top-0 left-0 right-0 z-50 border-b border-neutral-200/60 bg-white/80 backdrop-blur-lg supports-[backdrop-filter]:bg-white/70">
             <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-                <Link href="/" class="flex items-center gap-2.5">
+                <a href="/" class="flex items-center gap-2.5">
                     <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-600">
                         <Building2 class="h-5 w-5 text-white" />
                     </div>
                     <span class="text-xl font-bold tracking-tight text-neutral-800">PropertiKu</span>
-                </Link>
+                </a>
 
                 <nav class="hidden items-center gap-1 md:flex">
-                    <Link
-                        v-for="link in navLinks"
-                        :key="link.href"
-                        :href="link.href"
-                        class="rounded-lg px-3.5 py-2 text-sm font-medium text-neutral-600 transition-colors hover:bg-neutral-100 hover:text-emerald-700"
-                    >
-                        {{ link.label }}
-                    </Link>
+                    <template v-for="link in navLinks" :key="link.href">
+                        <a
+                            v-if="link.external"
+                            :href="link.href"
+                            class="rounded-lg px-3.5 py-2 text-sm font-medium text-neutral-600 transition-colors hover:bg-neutral-100 hover:text-emerald-700"
+                        >
+                            {{ link.label }}
+                        </a>
+                        <Link
+                            v-else
+                            :href="link.href"
+                            class="rounded-lg px-3.5 py-2 text-sm font-medium text-neutral-600 transition-colors hover:bg-neutral-100 hover:text-emerald-700"
+                        >
+                            {{ link.label }}
+                        </Link>
+                    </template>
                 </nav>
 
                 <div class="hidden items-center gap-2 md:flex">
@@ -66,15 +74,24 @@ const navLinks = [
             <!-- Mobile menu -->
             <div v-if="mobileMenuOpen" class="border-t border-neutral-200 bg-white px-4 pb-4 pt-2 md:hidden">
                 <nav class="flex flex-col gap-1">
-                    <Link
-                        v-for="link in navLinks"
-                        :key="link.href"
-                        :href="link.href"
-                        class="rounded-lg px-3 py-2.5 text-sm font-medium text-neutral-600 hover:bg-neutral-100"
-                        @click="mobileMenuOpen = false"
-                    >
-                        {{ link.label }}
-                    </Link>
+                    <template v-for="link in navLinks" :key="link.href">
+                        <a
+                            v-if="link.external"
+                            :href="link.href"
+                            class="rounded-lg px-3 py-2.5 text-sm font-medium text-neutral-600 hover:bg-neutral-100"
+                            @click="mobileMenuOpen = false"
+                        >
+                            {{ link.label }}
+                        </a>
+                        <Link
+                            v-else
+                            :href="link.href"
+                            class="rounded-lg px-3 py-2.5 text-sm font-medium text-neutral-600 hover:bg-neutral-100"
+                            @click="mobileMenuOpen = false"
+                        >
+                            {{ link.label }}
+                        </Link>
+                    </template>
                 </nav>
                 <div class="mt-3 flex flex-col gap-2 border-t border-neutral-200 pt-3">
                     <template v-if="$page.props.auth?.user">
@@ -104,12 +121,12 @@ const navLinks = [
             <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
                 <div class="grid gap-8 md:grid-cols-4">
                     <div class="md:col-span-1">
-                        <Link href="/" class="flex items-center gap-2.5">
+                        <a href="/" class="flex items-center gap-2.5">
                             <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-600">
                                 <Building2 class="h-4 w-4 text-white" />
                             </div>
                             <span class="text-lg font-bold text-neutral-800">PropertiKu</span>
-                        </Link>
+                        </a>
                         <p class="mt-3 text-sm leading-relaxed text-neutral-500">
                             Platform fasilitator properti terpercaya di Jakarta. Dari pencarian hingga serah terima sertifikat.
                         </p>
@@ -118,7 +135,10 @@ const navLinks = [
                         <h4 class="text-sm font-semibold text-neutral-800">Navigasi</h4>
                         <ul class="mt-3 space-y-2">
                             <li v-for="link in navLinks" :key="link.href">
-                                <Link :href="link.href" class="text-sm text-neutral-500 hover:text-emerald-700">
+                                <a v-if="link.external" :href="link.href" class="text-sm text-neutral-500 hover:text-emerald-700">
+                                    {{ link.label }}
+                                </a>
+                                <Link v-else :href="link.href" class="text-sm text-neutral-500 hover:text-emerald-700">
                                     {{ link.label }}
                                 </Link>
                             </li>

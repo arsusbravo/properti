@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { Head, Link } from '@inertiajs/vue3';
+import { Link } from '@inertiajs/vue3';
+import SeoHead from '@/components/SeoHead.vue';
 import PublicLayout from '@/layouts/PublicLayout.vue';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -188,9 +189,31 @@ function scrollToSearch() {
 </script>
 
 <template>
-    <Head title="PropertiKu - Fasilitator Properti Terpercaya di Jakarta">
-        <meta name="description" content="Platform fasilitator properti terpercaya di Jakarta. Temukan rumah, apartemen, tanah, dan properti lainnya dengan transaksi yang aman dan transparan." />
-    </Head>
+    <SeoHead
+        title="Fasilitator Properti Terpercaya di Jakarta"
+        description="Platform fasilitator properti terpercaya di Jakarta. Temukan rumah, apartemen, tanah, dan properti lainnya dengan transaksi yang aman dan transparan."
+        keywords="properti jakarta, jual beli rumah, fasilitator properti, rumah dijual jakarta, apartemen jakarta, tanah dijual"
+        :json-ld="[
+            {
+                '@context': 'https://schema.org',
+                '@type': 'Organization',
+                name: 'PropertiKu',
+                description: 'Platform fasilitator properti terpercaya di Jakarta',
+                url: '/',
+            },
+            {
+                '@context': 'https://schema.org',
+                '@type': 'WebSite',
+                name: 'PropertiKu',
+                url: '/',
+                potentialAction: {
+                    '@type': 'SearchAction',
+                    target: '/properti?search={search_term_string}',
+                    'query-input': 'required name=search_term_string',
+                },
+            },
+        ]"
+    />
 
     <PublicLayout>
         <!-- Hero Section with Video Background -->

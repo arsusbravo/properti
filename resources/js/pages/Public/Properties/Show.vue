@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { Head, Link, useForm } from '@inertiajs/vue3';
+import { Link, useForm } from '@inertiajs/vue3';
+import SeoHead from '@/components/SeoHead.vue';
 import { type Property } from '@/types';
 import {
     Building2,
@@ -32,6 +33,46 @@ type Props = {
 };
 
 const props = defineProps<Props>();
+
+const seoDescription = computed(() => {
+    const desc = props.property.description?.replace(/<[^>]*>/g, '') ?? '';
+    return desc.length > 155 ? desc.substring(0, 155).trimEnd() + '...' : desc;
+});
+
+const seoImage = computed(() => {
+    return props.property.media?.[0]?.original_url;
+});
+
+const seoJsonLd = computed(() => ({
+    '@context': 'https://schema.org',
+    '@type': 'RealEstateListing',
+    name: props.property.title,
+    description: seoDescription.value,
+    url: `/properti/${props.property.slug}`,
+    ...(seoImage.value ? { image: seoImage.value } : {}),
+    offers: {
+        '@type': 'Offer',
+        price: props.property.price,
+        priceCurrency: 'IDR',
+        availability: props.property.status === 'active' ? 'https://schema.org/InStock' : 'https://schema.org/SoldOut',
+    },
+    address: {
+        '@type': 'PostalAddress',
+        streetAddress: props.property.address,
+        addressLocality: props.property.city,
+        addressRegion: props.property.province,
+        addressCountry: 'ID',
+    },
+    ...(props.property.latitude && props.property.longitude
+        ? {
+              geo: {
+                  '@type': 'GeoCoordinates',
+                  latitude: props.property.latitude,
+                  longitude: props.property.longitude,
+              },
+          }
+        : {}),
+}));
 
 // Image gallery state
 const selectedImageIndex = ref(0);
@@ -150,7 +191,14 @@ const selectClass = 'w-full rounded-md border border-neutral-300 bg-white px-3 p
 </script>
 
 <template>
-    <Head :title="`${property.title} - PropertiKu`" />
+    <SeoHead
+        :title="property.title"
+        :description="seoDescription"
+        :image="seoImage"
+        type="article"
+        :url="`/properti/${property.slug}`"
+        :json-ld="seoJsonLd"
+    />
 
     <PublicLayout>
         <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">

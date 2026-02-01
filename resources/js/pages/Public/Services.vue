@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { Head, Link } from '@inertiajs/vue3';
+import { Link } from '@inertiajs/vue3';
+import SeoHead from '@/components/SeoHead.vue';
 import {
     Search,
     Eye,
@@ -13,7 +14,11 @@ import PublicLayout from '@/layouts/PublicLayout.vue';
 </script>
 
 <template>
-    <Head title="Layanan Kami - PropertiKu" />
+    <SeoHead
+        title="Layanan Kami"
+        description="Layanan fasilitasi properti end-to-end dari PropertiKu: pencarian, viewing, negosiasi, verifikasi dokumen, proses notaris, hingga serah terima."
+        keywords="layanan properti, fasilitasi jual beli properti, notaris properti jakarta"
+    />
 
     <PublicLayout>
         <!-- Hero -->

@@ -3,8 +3,47 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="index, follow">
 
-        <title inertia>{{ config('app.name', 'Laravel') }}</title>
+        @if(isset($page['props']['seo']))
+            @php $seo = $page['props']['seo']; @endphp
+            <title>{{ $seo['title'] }}</title>
+            <meta name="description" content="{{ $seo['description'] }}">
+            @if(!empty($seo['keywords']))
+                <meta name="keywords" content="{{ $seo['keywords'] }}">
+            @endif
+
+            {{-- Open Graph --}}
+            <meta property="og:title" content="{{ $seo['title'] }}">
+            <meta property="og:description" content="{{ $seo['description'] }}">
+            <meta property="og:type" content="{{ $seo['type'] ?? 'website' }}">
+            <meta property="og:url" content="{{ url()->current() }}">
+            <meta property="og:locale" content="id_ID">
+            <meta property="og:site_name" content="{{ config('app.name', 'PropertiKu') }}">
+            @if(!empty($seo['image']))
+                <meta property="og:image" content="{{ $seo['image'] }}">
+            @endif
+
+            {{-- Twitter Card --}}
+            <meta name="twitter:card" content="{{ !empty($seo['image']) ? 'summary_large_image' : 'summary' }}">
+            <meta name="twitter:title" content="{{ $seo['title'] }}">
+            <meta name="twitter:description" content="{{ $seo['description'] }}">
+            @if(!empty($seo['image']))
+                <meta name="twitter:image" content="{{ $seo['image'] }}">
+            @endif
+
+            {{-- Canonical URL --}}
+            <link rel="canonical" href="{{ url()->current() }}">
+
+            {{-- JSON-LD Structured Data --}}
+            @if(!empty($seo['jsonLd']))
+                <script type="application/ld+json">{!! json_encode($seo['jsonLd'], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}</script>
+            @endif
+        @else
+            <title inertia>{{ config('app.name', 'Laravel') }}</title>
+            <meta property="og:locale" content="id_ID">
+            <meta property="og:site_name" content="{{ config('app.name', 'PropertiKu') }}">
+        @endif
 
         <link rel="icon" href="/favicon.ico" sizes="any">
         <link rel="icon" href="/favicon.svg" type="image/svg+xml">
