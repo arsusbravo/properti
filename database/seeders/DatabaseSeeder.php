@@ -41,6 +41,16 @@ class DatabaseSeeder extends Seeder
             'whatsapp_number' => '081234567890',
         ]);
 
+        User::factory()->create([
+            'name' => 'Toto',
+            'email' => 'totoprimerealty@gmail.com',
+            'password' => bcrypt('toto7up'),
+            'role' => UserRole::ADMIN,
+            'email_verified_at' => now(),
+            'phone' => '081188062368',
+            'whatsapp_number' => '081188062368',
+        ]);
+
         $buyers = collect();
         $buyerData = [
             ['Budi Santoso', 'budi@example.com', '081234567891'],
