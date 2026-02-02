@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
 
             // Property preferences
-            $table->json('property_types'); // Array of PropertyType values
+            $table->text('property_types'); // Array of PropertyType values
             $table->string('listing_type')->default(ListingType::DIJUAL->value);
 
             // Budget
@@ -34,8 +34,8 @@ return new class extends Migration
             $table->unsignedTinyInteger('min_bathrooms')->nullable();
 
             // Location preferences
-            $table->json('preferred_locations')->nullable(); // Array of city/district
-            $table->json('preferred_certificate_types')->nullable();
+            $table->text('preferred_locations')->nullable(); // Array of city/district
+            $table->text('preferred_certificate_types')->nullable();
 
             // Timeline
             $table->string('urgency')->default(RequirementUrgency::FLEKSIBEL->value);

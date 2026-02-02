@@ -477,10 +477,9 @@ class DatabaseSeeder extends Seeder
             'commission_amount' => 600_000_000,
             'viewing_date' => now()->subMonths(4),
             'agreement_date' => now()->subMonths(3)->subWeeks(2),
-            'dp_paid_date' => now()->subMonths(3),
-            'notary_assigned_date' => now()->subMonths(2)->subWeeks(2),
-            'ajb_date' => now()->subMonths(2),
-            'completion_date' => now()->subMonths(1)->subWeeks(2),
+            'dp_paid_at' => now()->subMonths(3),
+            'notary_assigned_at' => now()->subMonths(2)->subWeeks(2),
+            'ajb_signed_at' => now()->subMonths(2),
             'completed_at' => now()->subMonths(1)->subWeeks(2),
             'notes' => 'Transaksi berjalan lancar. Pembeli sangat puas.',
         ]);
@@ -512,7 +511,7 @@ class DatabaseSeeder extends Seeder
             'commission_amount' => 66_250_000,
             'viewing_date' => now()->subWeeks(4),
             'agreement_date' => now()->subWeeks(2),
-            'dp_paid_date' => now()->subWeeks(1),
+            'dp_paid_at' => now()->subWeeks(1),
             'notes' => 'Pembeli sedang mengumpulkan dokumen KTP dan KK.',
         ]);
 
@@ -578,8 +577,8 @@ class DatabaseSeeder extends Seeder
             'commission_amount' => 137_500_000,
             'viewing_date' => now()->subMonths(1)->subWeeks(2),
             'agreement_date' => now()->subMonths(1),
-            'dp_paid_date' => now()->subWeeks(3),
-            'notary_assigned_date' => now()->subDays(2),
+            'dp_paid_at' => now()->subWeeks(3),
+            'notary_assigned_at' => now()->subDays(2),
             'notes' => 'Notaris Maria sudah ditugaskan, menunggu jadwal AJB.',
         ]);
 

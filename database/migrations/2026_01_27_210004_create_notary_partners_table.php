@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
             $table->string('city')->default('Jakarta');
-            $table->json('specializations')->nullable(); // PPAT, Notaris, etc.
+            $table->text('specializations')->nullable(); // PPAT, Notaris, etc.
             $table->boolean('is_active')->default(true);
             $table->text('notes')->nullable();
             $table->timestamps();
