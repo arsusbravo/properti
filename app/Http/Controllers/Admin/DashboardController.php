@@ -54,9 +54,12 @@ class DashboardController extends Controller
 
         // Transaction status distribution
         $transactionsByStatus = Transaction::select('status', DB::raw('count(*) as count'))
-            ->groupBy('status')
-            ->get()
-            ->pluck('count', 'status');
+        ->groupBy('status')
+        ->get()
+        ->mapWithKeys(function ($item) {
+            // This ensures the key is the string/int value of the Enum
+            return [$item->status->value => $item->count];
+        });
 
         // Recent inquiries
         $recentInquiries = Inquiry::with(['property:id,title,slug'])

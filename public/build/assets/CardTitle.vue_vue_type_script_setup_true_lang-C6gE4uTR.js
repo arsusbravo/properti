@@ -1,0 +1,1 @@
+import{c as o}from"./AppLogoIcon.vue_vue_type_script_setup_true_lang-v7XAnAto.js";import{d as n,c as t,z as r,n as l,u as c,o as m}from"./app-Bir1DHJn.js";const f=n({__name:"CardTitle",props:{class:{}},setup(s){const e=s;return(a,p)=>(m(),t("h3",{"data-slot":"card-title",class:l(c(o)("leading-none font-semibold",e.class))},[r(a.$slots,"default")],2))}});export{f as _};
